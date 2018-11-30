@@ -1,12 +1,12 @@
-#N canvas 927 334 367 338 10;
-#X declare -path creb;
+#N canvas 927 361 367 338 10;
 #X declare -path utils;
+#X declare -path creb -lib creb;
 #X obj 1 16 cnv 15 120 35 empty empty disto 2 6 1 8 -260818 -66577
 0;
 #X obj 89 31 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 8 -258699 -1 -1 6300 1;
+1 8 -258699 -1 -1 9900 1;
 #X obj 46 32 mknob 15 100 0 1 0 0 \$0-disto-snd \$0-disto-rcv disto
--2 -6 1 8 -241291 -1 -1 6300 1;
+-2 -6 1 8 -241291 -1 -1 1887 1;
 #X obj 21 72 inlet~;
 #X obj 21 283 outlet~;
 #X obj 46 116 r \$0-disto-snd;
@@ -15,18 +15,18 @@
 #X obj 46 137 pow 6;
 #X obj 46 158 * 100000;
 #X obj 21 180 mull~ 0 2;
-#X obj 166 18 declare -path creb;
 #X obj 21 210 dist~ 1;
 #X obj 166 38 declare -path utils;
 #X obj 157 168 apsubmaster \$1-\$2 \$1 \$2;
 #X obj 158 144 apf \$1-\$2 disto \$0-disto;
 #X obj 158 125 apf \$1-\$2 vol \$0-vol;
+#X obj 166 18 declare -path creb -lib creb;
 #X connect 3 0 10 0;
 #X connect 5 0 8 0;
 #X connect 6 0 4 0;
 #X connect 7 0 6 1;
 #X connect 8 0 9 0;
 #X connect 9 0 10 1;
-#X connect 10 0 12 0;
-#X connect 12 0 6 0;
+#X connect 10 0 11 0;
+#X connect 11 0 6 0;
 #X coords 0 -1 1 1 122 54 1 0 0;

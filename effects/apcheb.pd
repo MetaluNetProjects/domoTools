@@ -1,18 +1,18 @@
-#N canvas 161 312 521 366 10;
+#N canvas 161 312 567 366 10;
 #X declare -path utils;
-#X declare -path creb;
+#X declare -path creb -lib creb;
 #X obj 1 16 cnv 15 120 35 empty empty empty 2 6 1 8 -260818 -66577
 0;
 #X obj 102 33 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv vol -2 -6
-1 8 -258699 -1 -1 0 1;
+1 8 -258699 -1 -1 7700 1;
 #X obj 5 33 mknob 15 100 0 1 0 0 \$0-coef1-snd \$0-coef1-rcv c1 -2
--6 1 8 -241291 -1 -1 0 1;
+-6 1 8 -241291 -1 -1 4500 1;
 #X obj 23 33 mknob 15 100 0 1 0 0 \$0-coef2-snd \$0-coef2-rcv c2 -2
--6 1 8 -241291 -1 -1 0 1;
+-6 1 8 -241291 -1 -1 9200 1;
 #X obj 42 33 mknob 15 100 0 1 0 0 \$0-coef3-snd \$0-coef3-rcv c3 -2
 -6 1 8 -241291 -1 -1 0 1;
 #X obj 61 33 mknob 15 100 0 1 0 0 \$0-coef4-snd \$0-coef4-rcv c4 -2
--6 1 8 -241291 -1 -1 0 1;
+-6 1 8 -241291 -1 -1 7702 1;
 #X obj 17 243 cheby~ 4;
 #X msg 65 190 coef 1 \$1;
 #X msg 163 188 coef 2 \$1;
@@ -39,7 +39,7 @@
 #X obj 180 110 apf \$1-\$2 coef4 \$0-coef4;
 #X obj 180 11 apsubmaster \$1-\$2 \$1 \$2;
 #X obj 363 18 declare -path utils;
-#X obj 363 38 declare -path creb;
+#X obj 363 38 declare -path creb -lib creb;
 #X connect 6 0 24 0;
 #X connect 7 0 6 0;
 #X connect 8 0 6 0;
