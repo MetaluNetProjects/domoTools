@@ -1,0 +1,19 @@
+#N canvas 350 323 481 365 10;
+#X declare -path utils;
+#X obj 44 20 cnv 15 336 250 \$1-seq0-STEPcan-snd \$1-seq0-STEPcan-rcv
+empty 20 12 0 14 -42246 -233017 0;
+#X obj 393 27 tgl 30 1 \$1-\$2-showStep \$1-\$2-showStep show 2 15
+0 10 -13381 -257985 -257985 0 1;
+#X obj 59 306 declare -path utils;
+#X obj 50 26 rythmicPattern \$1 \$2 1;
+#X obj 50 87 rythmicPattern \$1 \$2 3;
+#X obj 50 148 rythmicPattern \$1 \$2 5;
+#X obj 49 209 rythmicPattern \$1 \$2 7;
+#X obj 215 209 rythmicPattern \$1 \$2 8;
+#X obj 214 148 rythmicPattern \$1 \$2 6;
+#X obj 215 87 rythmicPattern \$1 \$2 4;
+#X obj 215 26 rythmicPattern \$1 \$2 2;
+#X obj 341 287 r \$1-\$2-snd;
+#X obj 341 308 s \$1-\$2-table;
+#X obj 208 307 table \$1-\$2-table 9;
+#X connect 11 0 12 0;

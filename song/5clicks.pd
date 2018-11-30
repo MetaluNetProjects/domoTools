@@ -1,0 +1,18 @@
+#N canvas 100 237 316 273 10;
+#X msg 127 119 0;
+#X obj 112 145 i;
+#X obj 112 166 + 1;
+#X obj 127 98 del 400;
+#X obj 112 187 sel 5;
+#X obj 112 208 outlet;
+#X obj 112 50 inlet clicks;
+#X obj 112 76 b;
+#X connect 0 0 1 1;
+#X connect 1 0 2 0;
+#X connect 2 0 1 1;
+#X connect 2 0 4 0;
+#X connect 3 0 0 0;
+#X connect 4 0 5 0;
+#X connect 6 0 7 0;
+#X connect 7 0 1 0;
+#X connect 7 0 3 0;

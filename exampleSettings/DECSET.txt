@@ -1,0 +1,21 @@
+SEQ-patternMAX 3 0;
+SEQ fd1 vol 38.4615 16 0 38.4615 38.4615 38.4615 0 0 0 0 0 0 0 0 0
+0 0 0;
+SEQ fd1 time 2.08061 16 0 0.891709 0.699986 2.08061 0 0 0 0 0 0 0 0
+0 0 0 0;
+SEQ fd1 tone 1.75758 16 0 1.53535 0.464646 1.75758 0 0 0 0 0 0 0 0
+0 0 0 0;
+SEQ fragseq1-vol 0.762712 16 0.728814 0.728814 0.762712 0.762712 0
+0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-palinmesure 3 16 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-constance 9 16 0 0 20 9 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-pitch 4 16 15 0 0 4 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-fragdenum 1 16 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-timemode 2 16 1 1 1 2 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-smooth 2 16 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-mode 3 16 0 0 3 3 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-amorti 0 16 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0;
+SEQ fragseq1-denum 3 16 1 1 1 3 0 0 0 0 0 0 0 0 0 0 0 0;
+decoupeur-setting1-Hmin 0.329114 0;
+decoupeur-setting1-Lmin 0.2 0;
+decoupeur-setting1-Seuil 0.341772 0;

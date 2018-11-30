@@ -1,0 +1,61 @@
+#N canvas 161 312 521 366 10;
+#X declare -path utils;
+#X declare -path creb;
+#X obj 1 16 cnv 15 120 35 empty empty empty 2 6 1 8 -260818 -66577
+0;
+#X obj 102 33 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv vol -2 -6
+1 8 -258699 -1 -1 0 1;
+#X obj 5 33 mknob 15 100 0 1 0 0 \$0-coef1-snd \$0-coef1-rcv c1 -2
+-6 1 8 -241291 -1 -1 0 1;
+#X obj 23 33 mknob 15 100 0 1 0 0 \$0-coef2-snd \$0-coef2-rcv c2 -2
+-6 1 8 -241291 -1 -1 0 1;
+#X obj 42 33 mknob 15 100 0 1 0 0 \$0-coef3-snd \$0-coef3-rcv c3 -2
+-6 1 8 -241291 -1 -1 0 1;
+#X obj 61 33 mknob 15 100 0 1 0 0 \$0-coef4-snd \$0-coef4-rcv c4 -2
+-6 1 8 -241291 -1 -1 0 1;
+#X obj 17 243 cheby~ 4;
+#X msg 65 190 coef 1 \$1;
+#X msg 163 188 coef 2 \$1;
+#X msg 260 188 coef 3 \$1;
+#X msg 357 188 coef 4 \$1;
+#X obj 65 168 pow 3;
+#X obj 65 148 r \$0-coef1-snd;
+#X obj 163 168 pow 3;
+#X obj 163 148 r \$0-coef2-snd;
+#X obj 260 168 pow 3;
+#X obj 357 168 pow 3;
+#X obj 260 148 r \$0-coef3-snd;
+#X obj 357 148 r \$0-coef4-snd;
+#X obj 17 148 inlet~;
+#X obj 17 317 outlet~;
+#X obj 74 251 r \$0-vol-snd;
+#X obj 74 272 pow 3;
+#X obj 17 292 mull~ 0 10;
+#X obj 17 269 hip~ 10;
+#X obj 180 34 apf \$1-\$2 vol \$0-vol;
+#X obj 180 53 apf \$1-\$2 coef1 \$0-coef1;
+#X obj 180 72 apf \$1-\$2 coef2 \$0-coef2;
+#X obj 180 91 apf \$1-\$2 coef3 \$0-coef3;
+#X obj 180 110 apf \$1-\$2 coef4 \$0-coef4;
+#X obj 180 11 apsubmaster \$1-\$2 \$1 \$2;
+#X obj 363 18 declare -path utils;
+#X obj 363 38 declare -path creb;
+#X connect 6 0 24 0;
+#X connect 7 0 6 0;
+#X connect 8 0 6 0;
+#X connect 9 0 6 0;
+#X connect 10 0 6 0;
+#X connect 11 0 7 0;
+#X connect 12 0 11 0;
+#X connect 13 0 8 0;
+#X connect 14 0 13 0;
+#X connect 15 0 9 0;
+#X connect 16 0 10 0;
+#X connect 17 0 15 0;
+#X connect 18 0 16 0;
+#X connect 19 0 6 0;
+#X connect 21 0 22 0;
+#X connect 22 0 23 1;
+#X connect 23 0 20 0;
+#X connect 24 0 23 0;
+#X coords 0 0 1 1 122 54 1 0 0;

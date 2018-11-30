@@ -1,0 +1,8 @@
+#N canvas 1 108 258 150 10;
+#X obj 49 32 inlet;
+#X msg 49 53 set notelength-\$1 \, 0;
+#X obj 49 74 tabread;
+#X obj 49 95 outlet;
+#X connect 0 0 1 0;
+#X connect 1 0 2 0;
+#X connect 2 0 3 0;
