@@ -24,7 +24,7 @@
 #X text 150 42 <- synchronization with other instruments;
 #X obj 329 68 r TEMPOLED;
 #X obj 329 93 tgl 30 0 empty empty empty 17 7 0 10 -262144 -258113
--1 1 1;
+-1 0 1;
 #X msg 291 316 145;
 #X floatatom 291 379 5 0 0 0 - - -;
 #X msg 325 317 545;
@@ -258,7 +258,7 @@ created before), f 36;
 #X obj 391 195 bng 15 80 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 24 166 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 2100 1;
+-1 -1 0 1;
 #X text 416 20 nb_steps;
 #X text 510 19 clock_divide;
 #X obj 22 7 declare -path effects -path rhythmic -path moonlib;
@@ -309,6 +309,7 @@ created before), f 36;
 #X connect 36 0 5 0;
 #X connect 36 0 19 0;
 #X restore 28 404 pd RHYTHMIC_example;
+#X obj 235 295 loadbang;
 #X connect 0 0 2 0;
 #X connect 0 0 28 0;
 #X connect 1 0 0 0;
@@ -328,3 +329,4 @@ created before), f 36;
 #X connect 23 0 18 0;
 #X connect 24 0 23 0;
 #X connect 25 0 24 0;
+#X connect 34 0 14 0;
