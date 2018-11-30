@@ -44,7 +44,7 @@ They can be bounded to a given autopreset-reference, in order to recall their se
 - ggee
 - hcs
 - AutoPreset
-- 
+
 ---------------
 (c) 2018 Antoine Rousseau @ metalu.net
 
