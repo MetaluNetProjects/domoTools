@@ -1,4 +1,5 @@
 #N canvas 626 262 664 613 10;
+#X declare -path utils;
 #X obj 24 79 table notelength-\$1 \$2;
 #X obj 26 174 tabread notelength-\$1;
 #X floatatom 26 196 8 0 0 0 - - -;
@@ -66,6 +67,7 @@
 to NOTEBANK-DATASDIR [volume [pitch]], f 103;
 #X obj 138 380 r NOTEBANK-DATASDIR;
 #X obj 51 400 list prepend --;
+#X obj 418 47 declare -path utils;
 #X connect 1 0 2 0;
 #X connect 3 0 1 0;
 #X connect 6 0 7 0;
