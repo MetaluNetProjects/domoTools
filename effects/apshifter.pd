@@ -1,9 +1,9 @@
-#N canvas 766 155 434 256 10;
+#N canvas 756 145 434 256 10;
 #X declare -path utils;
 #X obj 11 27 cnv 15 120 60 empty empty empty 2 6 1 8 -228992 -42246
 0;
 #X obj 40 46 mknob 15 100 0 1 0 0 \$0-win-snd \$0-win-rcv window -2
--6 1 8 -257472 -1 -1 0 1;
+-6 1 8 -257472 -1 -1 600 1;
 #X obj 75 71 mknob 15 100 0 1 0 0 \$0-freq-snd \$0-freq-rcv freq -2
 -6 1 8 -260818 -1 -1 0 1;
 #X obj 40 72 mknob 15 100 0 1 0 0 \$0-grain-snd \$0-grain-rcv grain
@@ -11,11 +11,11 @@
 #X obj 74 42 mknob 15 100 0 1 0 0 \$0-levlfo-snd \$0-levlfo-rcv level-lfo
 -2 -6 1 8 -44926 -1 -1 0 1;
 #X obj 15 40 mknob 15 100 0 1 0 0 \$0-trans-snd \$0-trans-rcv transpose
--2 -6 1 8 -241291 -1 -1 0 1;
+-2 -6 1 8 -241291 -1 -1 4950 1;
 #X obj 15 72 mknob 15 100 0 1 0 0 \$0-del-snd \$0-del-rcv delay -2
 -6 1 8 -195568 -1 -1 0 1;
 #X obj 105 42 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv volume -2
--6 1 8 -258699 -1 -1 0 1;
+-6 1 8 -258699 -1 -1 9800 1;
 #X obj 100 69 tgl 15 0 \$0-bypass-snd \$0-bypass-rcv bypass 0 -6 1
 8 -258699 -1 -1 0 1;
 #X obj 16 109 inlet~;
@@ -174,7 +174,12 @@
 #X obj 206 127 apf \$1-\$2 vol \$0-vol;
 #X obj 206 146 apf \$1-\$2 bypass \$0-bypass;
 #X obj 206 167 apsubmaster \$1-\$2 \$1 \$2;
+#X msg 28 4 0.5;
+#X obj 29 54 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 9 0 12 0;
 #X connect 11 0 12 1;
 #X connect 12 0 10 0;
+#X connect 23 0 5 0;
+#X connect 24 0 23 0;
 #X coords 0 0 1 1 122 80 1 10 10;

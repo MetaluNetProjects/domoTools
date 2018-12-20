@@ -1,17 +1,17 @@
-#N canvas 864 369 476 269 10;
+#N canvas 826 547 476 269 10;
 #X declare -path utils;
 #X obj 1 17 cnv 15 120 60 empty empty SSB-modulation 2 6 1 8 -261681
 -42246 0;
 #X obj 35 50 mknob 15 100 0 1 0 0 \$0-freq-snd \$0-freq-rcv freq -2
--5 1 8 -260818 -1 -1 9900 1;
+-5 1 8 -260818 -1 -1 2100 1;
 #X obj 64 35 mknob 15 100 0 1 0 0 \$0-grain-snd \$0-grain-rcv grain
--2 -5 1 8 -262131 -1 -1 9900 1;
+-2 -5 1 8 -262131 -1 -1 4600 1;
 #X obj 5 61 mknob 15 100 0 1 0 0 \$0-levlfo-snd \$0-levlfo-rcv level-lfo
--2 -5 1 8 -44926 -1 -1 9900 1;
+-2 -5 1 8 -44926 -1 -1 0 1;
 #X obj 5 35 mknob 15 100 0 1 0 0 \$0-trans-snd \$0-trans-rcv transpose
--2 -5 1 8 -241291 -1 -1 9900 1;
+-2 -5 1 8 -241291 -1 -1 4950 1;
 #X obj 64 62 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv volume -2
--5 1 8 -258699 -1 -1 9900 1;
+-5 1 8 -258699 -1 -1 8700 1;
 #X obj 92 47 tgl 15 0 \$0-bypass-snd \$0-bypass-rcv bypass 0 -6 1 8
 -258699 -1 -1 0 1;
 #X obj 9 118 inlet~;
@@ -193,7 +193,12 @@ this from a 4X patch by Emmanuel Favreau \, circa 1982;
 #X obj 209 94 apf \$1-\$2 vol \$0-vol;
 #X obj 209 115 apf \$1-\$2 bypass \$0-bypass;
 #X obj 208 138 apsubmaster \$1-\$2 \$1 \$2;
+#X msg 21 -1 0.5;
+#X obj 22 41 bng 8 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 7 0 10 0;
 #X connect 9 0 10 1;
 #X connect 10 0 8 0;
+#X connect 19 0 4 0;
+#X connect 20 0 19 0;
 #X coords 0 0 1 1 122 80 1 0 0;
