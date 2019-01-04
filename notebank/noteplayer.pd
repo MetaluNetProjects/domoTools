@@ -54,8 +54,8 @@
 #X obj 216 227 unpack f f;
 #X text 284 227 vol pitch;
 #X obj 84 350 +;
-#X obj 270 602 f 1;
-#X obj 270 580 b;
+#X obj 270 573 f 1;
+#X obj 270 551 b;
 #X floatatom 291 272 5 0 0 0 - - -;
 #X obj 198 223 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -71,6 +71,8 @@
 ;
 #X obj 389 289 f;
 #X obj 191 14 declare -path ../gammabs;
+#X obj 270 594 * 1;
+#X obj 433 90 route vol;
 #X connect 0 0 66 0;
 #X connect 2 0 3 0;
 #X connect 3 0 43 0;
@@ -143,7 +145,7 @@
 #X connect 51 0 56 0;
 #X connect 51 1 53 1;
 #X connect 53 0 64 0;
-#X connect 54 0 58 0;
+#X connect 54 0 69 0;
 #X connect 55 0 54 0;
 #X connect 58 0 44 0;
 #X connect 59 0 47 0;
@@ -160,4 +162,7 @@
 #X connect 66 3 60 0;
 #X connect 66 4 59 0;
 #X connect 66 5 67 0;
+#X connect 66 6 70 0;
 #X connect 67 0 65 0;
+#X connect 69 0 58 0;
+#X connect 70 0 69 1;
