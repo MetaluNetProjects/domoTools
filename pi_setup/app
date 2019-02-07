@@ -1,0 +1,11 @@
+#!/bin/bash
+
+ENTRY="$(<~/bin/ENTRY_PATCH.txt)"
+
+killall pd
+sleep 1
+killall -9 pd
+
+pd -open $ENTRY
+
+

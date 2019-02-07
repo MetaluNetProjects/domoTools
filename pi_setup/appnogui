@@ -1,0 +1,13 @@
+#!/bin/bash
+
+sudo bash -c "echo performance > /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor"
+
+ENTRY="$(<~/bin/ENTRY_PATCH.txt)"
+
+pd -nogui \
+	-open $ENTRY \
+	-send "AUTOSTART bang"
+
+
+
+
