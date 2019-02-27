@@ -1,4 +1,4 @@
-#N canvas 633 112 587 394 10;
+#N canvas 603 88 587 394 10;
 #X obj 11 11 cnv 15 157 52 \$1-\$2-STEPcan-snd \$1-\$2-STEPcan-rcv
 PATTERN-\$3 20 10 1 14 -42246 -233017 0;
 #X obj 10 31 cnv 15 60 29 empty empty -1---2---3---4--- 4 8 1 10 -4160
@@ -8,15 +8,15 @@ PATTERN-\$3 20 10 1 14 -42246 -233017 0;
 #X obj 132 31 cnv 15 28 29 empty empty -9--10- 0 8 1 10 -4160 -262144
 0;
 #X obj 26 43 tgl 15 0 \$0-s1-snd \$0-s1-rcv empty 17 7 0 10 -1 -262144
+-262144 0 1;
+#X obj 41 43 tgl 15 0 \$0-s2-snd \$0-s2-rcv empty 17 7 0 10 -1 -262144
 -262144 1 1;
-#X obj 41 43 tgl 15 0 \$0-s2-snd \$0-s2-rcv empty 17 7 0 10 -262144
--262144 -233017 0 1;
 #X obj 56 43 tgl 15 0 \$0-s3-snd \$0-s3-rcv empty 17 7 0 10 -262144
--262144 -233017 1 1;
-#X obj 71 43 tgl 15 0 \$0-s4-snd \$0-s4-rcv empty 17 7 0 10 -262144
 -262144 -233017 0 1;
-#X obj 86 43 tgl 15 0 \$0-s5-snd \$0-s5-rcv empty 17 7 0 10 -262144
--262144 -233017 0 1;
+#X obj 71 43 tgl 15 0 \$0-s4-snd \$0-s4-rcv empty 17 7 0 10 -1 -262144
+-262144 1 1;
+#X obj 86 43 tgl 15 0 \$0-s5-snd \$0-s5-rcv empty 17 7 0 10 -1 -262144
+-262144 1 1;
 #X obj 101 43 tgl 15 0 \$0-s6-snd \$0-s6-rcv empty 17 7 0 10 -262144
 -262144 -233017 0 1;
 #X obj 116 43 tgl 15 0 \$0-s7-snd \$0-s7-rcv empty 17 7 0 10 -1 -262144
@@ -25,8 +25,8 @@ PATTERN-\$3 20 10 1 14 -42246 -233017 0;
 -262144 -233017 0 1;
 #X obj 146 43 tgl 15 0 \$0-s9-snd \$0-s9-rcv empty 17 7 0 10 -262144
 -262144 -233017 0 1;
-#X obj 11 43 tgl 15 0 \$0-s0-snd \$0-s0-rcv empty 17 7 0 10 -262144
--262144 -233017 1 1;
+#X obj 11 43 tgl 15 0 \$0-s0-snd \$0-s0-rcv empty 17 7 0 10 -1 -262144
+-262144 1 1;
 #X obj 207 223 route 0 1, f 19;
 #X obj 207 295 &;
 #X obj 262 292 |;
@@ -228,14 +228,14 @@ PATTERN-\$3 20 10 1 14 -42246 -233017 0;
 #X restore 12 161 pd color;
 #X msg 207 247 1023 \$1;
 #X obj 11 78 dispatch \$0-s 0 10;
-#X obj 119 45 hsl 45 8 0 127 0 0 \$0-STEPnum-snd \$0-STEPnum-rcv empty
+#X obj 134 45 hsl 30 8 0 127 0 0 \$0-STEPnum-snd \$0-STEPnum-rcv empty
 -2 -8 0 10 -42246 -42246 -262144 0 1;
 #X obj 180 47 cnv 7 7 7 \$1-S2-CanDefile-snd \$1-\$2-CanDefile-rcv
 empty 20 12 0 14 -260818 -260818 0;
 #X obj 13 237 list prepend \$3;
 #X obj 13 332 route \$3;
 #X obj 13 134 nbx 5 14 -1e+37 1e+37 0 0 \$0-pattern-snd \$0-pattern-rcv
-pattern 0 -8 0 10 -262144 -1 -1 2 256;
+pattern 0 -8 0 10 -262144 -1 -1 53 256;
 #X obj 13 311 r \$1-\$2-rcv;
 #X obj 13 258 list trim;
 #X obj 13 282 s \$1-\$2-snd;
@@ -310,6 +310,7 @@ pattern 0 -8 0 10 -262144 -1 -1 2 256;
 #X obj 13 353 s \$0-pattern-rcv;
 #X obj 207 323 s \$0-pattern-rcv;
 #X obj 277 127 r \$0-pattern-snd;
+#X msg 391 19 8;
 #X connect 14 0 27 0;
 #X connect 14 1 16 0;
 #X connect 15 0 53 0;
@@ -345,4 +346,5 @@ pattern 0 -8 0 10 -262144 -1 -1 2 256;
 #X connect 54 0 16 1;
 #X connect 54 0 15 1;
 #X connect 54 0 21 1;
+#X connect 55 0 40 0;
 #X coords 0 -1 1 1 159 54 1 10 10;
