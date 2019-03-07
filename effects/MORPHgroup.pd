@@ -1,4 +1,4 @@
-#N canvas 156 554 387 321 10;
+#N canvas 156 581 387 321 10;
 #X obj 37 31 hradio 15 1 0 16 \$0-pattern-snd \$0-pattern-rcv empty
 0 -8 0 10 -262144 -1 -1 3;
 #X obj 37 53 hradio 15 1 0 16 \$0-patternMAX-snd \$0-patternMAX-rcv
@@ -52,10 +52,13 @@ empty 0 -8 0 10 -257985 -1 -1 3;
 #X obj 20 234 list prepend _all_ load;
 #X obj 18 90 apsubmaster \$1-\$2 \$1 \$2;
 #X obj 19 121 apf \$1 \$2-patternMAX \$0-patternMAX 2;
+#X obj 265 125 inlet;
+#X obj 265 146 s \$0-pattern-rcv;
 #X connect 4 0 7 0;
 #X connect 5 0 6 0;
 #X connect 7 0 8 0;
 #X connect 8 0 10 0;
 #X connect 9 0 8 1;
 #X connect 10 0 5 0;
+#X connect 13 0 14 0;
 #X coords 0 -1 1 1 280 60 1 10 10;
