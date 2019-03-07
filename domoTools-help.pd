@@ -26,7 +26,7 @@
 #X text 150 42 <- synchronization with other instruments;
 #X obj 329 68 r TEMPOLED;
 #X obj 329 93 tgl 30 0 empty empty empty 17 7 0 10 -262144 -258113
--1 0 1;
+-1 1 1;
 #X msg 291 316 145;
 #X floatatom 291 379 5 0 0 0 - - -;
 #X msg 325 317 545;
@@ -38,7 +38,7 @@
 #X obj 291 358 r /GAMME;
 #X obj 291 210 r CLOCK;
 #X obj 291 274 spigot;
-#X obj 291 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 291 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 291 232 ndmetro 2 0.25;
 #N canvas 573 111 709 580 DECOUPEUR_example 0;
@@ -234,7 +234,7 @@ created before), f 36;
 #X connect 43 0 36 0;
 #X connect 44 0 42 0;
 #X restore 30 324 pd NOTEBANK_example;
-#N canvas 131 206 647 699 RHYTHMIC_example 1;
+#N canvas 385 326 647 699 RHYTHMIC_example 0;
 #X obj 22 28 declare -path AutoPreset;
 #X obj 20 96 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1 -1
 ;
@@ -262,7 +262,7 @@ created before), f 36;
 #X obj 391 195 bng 15 80 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 24 166 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 9600 1;
+-1 -1 0 1;
 #X text 416 20 nb_steps;
 #X text 510 19 clock_divide;
 #X obj 22 7 declare -path effects -path rhythmic -path moonlib;
@@ -314,7 +314,7 @@ created before), f 36;
 #X connect 36 0 19 0;
 #X restore 28 404 pd RHYTHMIC_example;
 #X obj 235 295 loadbang;
-#N canvas 789 102 680 760 MELODIC_example 1;
+#N canvas 869 103 680 760 MELODIC_example 0;
 #X obj 22 28 declare -path AutoPreset;
 #X obj 20 96 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1 -1
 ;
@@ -322,7 +322,7 @@ created before), f 36;
 -1;
 #X obj 20 75 loadbang;
 #X obj 369 52 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6200 1;
+-1 -1 8600 1;
 #X obj 20 54 apmaster MELODIC;
 #X obj 20 116 apmasterfile MELODIC exampleSettings/MELODIC.txt;
 #X obj 366 72 MORPHgroup MELODIC A;
@@ -341,9 +341,10 @@ created before), f 36;
 #X msg 446 137 ref MELODIC-phrasesA;
 #X msg 366 137 ref MELODIC;
 #X obj 28 408 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 5900 1;
+-1 -1 0 1;
 #X obj 184 406 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
+#X msg 300 240 30;
 #X connect 1 0 6 0;
 #X connect 2 0 6 1;
 #X connect 3 0 1 0;
@@ -361,6 +362,7 @@ created before), f 36;
 #X connect 21 0 15 1;
 #X connect 22 0 19 0;
 #X connect 23 0 19 1;
+#X connect 24 0 13 0;
 #X restore 28 431 pd MELODIC_example;
 #X connect 0 0 2 0;
 #X connect 0 0 28 0;
