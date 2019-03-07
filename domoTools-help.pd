@@ -1,4 +1,4 @@
-#N canvas 64 131 476 471 10;
+#N canvas 68 352 476 471 10;
 #X declare -path AutoPreset;
 #X declare -path decoupeur -path effects;
 #X declare -path domonet -path gammabs -path song -path moonlib;
@@ -7,6 +7,8 @@
 #X declare -path notebank;
 #X declare -path AutoPreset;
 #X declare -path effects -path rhythmic -path moonlib;
+#X declare -path AutoPreset;
+#X declare -path effects -path melodic -path moonlib;
 #X obj 28 99 5clicks;
 #X obj 28 77 bng 15 250 50 0 empty empty 5_clicks_to_save_song 17 7
 0 10 -258113 -1 -1;
@@ -101,7 +103,7 @@ created before), f 36;
 #X obj 22 10 declare -path domonet -path gammabs -path song -path moonlib
 , f 66;
 #X obj 22 42 domonet MyInstrument;
-#N canvas 693 124 691 547 EFFECTS_example 1;
+#N canvas 813 153 691 547 EFFECTS_example 0;
 #X obj 20 96 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1 -1
 ;
 #X obj 245 91 bng 15 250 50 0 empty empty save 17 7 0 10 -258113 -1
@@ -130,6 +132,7 @@ created before), f 36;
 #X obj 270 447 apcheb FX-A cheb1;
 #X obj 532 356 apmoog FX-A eq1;
 #X obj 401 356 apeq FX-A eq1;
+#X obj 511 255 apslider FX-A slider1;
 #X connect 0 0 5 0;
 #X connect 1 0 5 1;
 #X connect 2 0 0 0;
@@ -231,7 +234,7 @@ created before), f 36;
 #X connect 43 0 36 0;
 #X connect 44 0 42 0;
 #X restore 30 324 pd NOTEBANK_example;
-#N canvas 530 111 647 699 RHYTHMIC_example 1;
+#N canvas 300 185 647 699 RHYTHMIC_example 0;
 #X obj 22 28 declare -path AutoPreset;
 #X obj 20 96 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1 -1
 ;
@@ -311,6 +314,44 @@ created before), f 36;
 #X connect 36 0 19 0;
 #X restore 28 404 pd RHYTHMIC_example;
 #X obj 235 295 loadbang;
+#N canvas 660 270 722 606 MELODIC_example 0;
+#X obj 22 28 declare -path AutoPreset;
+#X obj 20 96 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1 -1
+;
+#X obj 293 96 bng 15 250 50 0 empty empty save 17 7 0 10 -258113 -1
+-1;
+#X obj 20 75 loadbang;
+#X obj 24 166 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 20 54 apmaster MELODIC;
+#X obj 20 116 apmasterfile MELODIC exampleSettings/MELODIC.txt;
+#X obj 21 186 MORPHgroup MELODIC A;
+#X obj 22 7 declare -path effects -path melodic -path moonlib;
+#X obj 24 291 phrase MELODIC melo 1;
+#X obj 410 188 synthExample MELODIC-A synth1;
+#X msg 410 163 stop;
+#X obj 410 451 dac~;
+#X obj 451 162 + 20;
+#X obj 410 74 r CLOCK;
+#X obj 410 95 phrase_play MELODIC melo 1;
+#X obj 410 136 sel 24;
+#X msg 550 52 num 1;
+#X msg 593 54 num 2;
+#X connect 1 0 6 0;
+#X connect 2 0 6 1;
+#X connect 3 0 1 0;
+#X connect 4 0 7 0;
+#X connect 10 0 12 0;
+#X connect 10 0 12 1;
+#X connect 11 0 10 0;
+#X connect 13 0 10 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 11 0;
+#X connect 16 1 13 0;
+#X connect 17 0 15 1;
+#X connect 18 0 15 1;
+#X restore 28 431 pd MELODIC_example;
 #X connect 0 0 2 0;
 #X connect 0 0 28 0;
 #X connect 1 0 0 0;
