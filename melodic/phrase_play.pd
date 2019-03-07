@@ -34,23 +34,25 @@
 #X obj 414 296 s;
 #X msg 441 242 symbol \$1-\$2-melophrase-phrase;
 #X msg 414 269 \$3;
-#X obj 157 456 s;
-#X msg 172 432 symbol \$1-\$2-melophrase-step;
+#X obj 182 485 s;
+#X msg 197 461 symbol \$1-\$2-melophrase-step;
 #X obj 39 105 t a b;
-#X obj 39 393 outlet;
+#X obj 39 482 outlet;
 #X obj 105 38 tgl 15 0 \$0-show \$0-show show 17 7 0 10 -257985 -1
 -1 1 1;
 #X obj 241 109 route ref id num play show;
 #X obj 372 149 s \$0-play;
 #X obj 385 131 s \$0-show;
 #X obj 55 38 tgl 15 0 \$0-play \$0-play play 17 7 0 10 -4034 -1 -1
-1 1;
+0 1;
 #X obj 39 133 spigot;
 #X obj 103 62 r \$0-play;
 #X obj 103 83 sel 0;
 #X msg 103 104 -1;
-#X obj 157 411 spigot;
-#X obj 190 391 r \$0-show;
+#X obj 182 440 spigot;
+#X obj 215 420 r \$0-show;
+#X obj 39 393 sel 24;
+#X obj 91 482 outlet stop;
 #X connect 0 0 36 0;
 #X connect 1 0 29 0;
 #X connect 2 0 39 0;
@@ -72,7 +74,7 @@
 #X connect 15 0 16 0;
 #X connect 16 0 20 1;
 #X connect 17 0 18 0;
-#X connect 18 0 37 0;
+#X connect 18 0 49 0;
 #X connect 19 0 12 0;
 #X connect 19 1 21 0;
 #X connect 19 2 22 0;
@@ -103,7 +105,10 @@
 #X connect 44 0 45 0;
 #X connect 44 0 43 1;
 #X connect 45 0 46 0;
+#X connect 45 0 50 0;
 #X connect 46 0 1 0;
 #X connect 47 0 34 0;
 #X connect 48 0 47 1;
+#X connect 49 0 50 0;
+#X connect 49 1 37 0;
 #X coords 0 -1 1 1 100 35 1 50 20;

@@ -38,7 +38,7 @@
 #X obj 291 358 r /GAMME;
 #X obj 291 210 r CLOCK;
 #X obj 291 274 spigot;
-#X obj 291 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 291 254 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 291 232 ndmetro 2 0.25;
 #N canvas 573 111 709 580 DECOUPEUR_example 0;
@@ -234,7 +234,7 @@ created before), f 36;
 #X connect 43 0 36 0;
 #X connect 44 0 42 0;
 #X restore 30 324 pd NOTEBANK_example;
-#N canvas 300 185 647 699 RHYTHMIC_example 0;
+#N canvas 131 206 647 699 RHYTHMIC_example 1;
 #X obj 22 28 declare -path AutoPreset;
 #X obj 20 96 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1 -1
 ;
@@ -262,7 +262,7 @@ created before), f 36;
 #X obj 391 195 bng 15 80 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 24 166 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 9600 1;
 #X text 416 20 nb_steps;
 #X text 510 19 clock_divide;
 #X obj 22 7 declare -path effects -path rhythmic -path moonlib;
@@ -314,29 +314,36 @@ created before), f 36;
 #X connect 36 0 19 0;
 #X restore 28 404 pd RHYTHMIC_example;
 #X obj 235 295 loadbang;
-#N canvas 660 270 722 606 MELODIC_example 0;
+#N canvas 789 102 680 760 MELODIC_example 1;
 #X obj 22 28 declare -path AutoPreset;
 #X obj 20 96 bng 15 250 50 0 empty empty load 17 7 0 10 -4034 -1 -1
 ;
 #X obj 293 96 bng 15 250 50 0 empty empty save 17 7 0 10 -258113 -1
 -1;
 #X obj 20 75 loadbang;
-#X obj 24 166 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+#X obj 369 52 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 6200 1;
 #X obj 20 54 apmaster MELODIC;
 #X obj 20 116 apmasterfile MELODIC exampleSettings/MELODIC.txt;
-#X obj 21 186 MORPHgroup MELODIC A;
+#X obj 366 72 MORPHgroup MELODIC A;
 #X obj 22 7 declare -path effects -path melodic -path moonlib;
-#X obj 24 291 phrase MELODIC melo 1;
-#X obj 410 188 synthExample MELODIC-A synth1;
-#X msg 410 163 stop;
-#X obj 410 451 dac~;
-#X obj 451 162 + 20;
-#X obj 410 74 r CLOCK;
-#X obj 410 95 phrase_play MELODIC melo 1;
-#X obj 410 136 sel 24;
-#X msg 550 52 num 1;
-#X msg 593 54 num 2;
+#X obj 21 142 phrase MELODIC melo 1;
+#X obj 365 280 synthExample MELODIC-A synth1;
+#X msg 445 245 stop;
+#X obj 365 543 dac~;
+#X obj 365 249 + 20;
+#X obj 365 166 r CLOCK;
+#X obj 365 187 phrase_play MELODIC melo 1;
+#X msg 581 136 num 1;
+#X msg 624 137 num 2;
+#X obj 25 494 phrase MELODIC-phrasesA melo 1;
+#X obj 25 428 MORPHgroup MELODIC phrasesA;
+#X msg 446 137 ref MELODIC-phrasesA;
+#X msg 366 137 ref MELODIC;
+#X obj 28 408 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 5900 1;
+#X obj 184 406 hradio 15 1 0 8 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
 #X connect 1 0 6 0;
 #X connect 2 0 6 1;
 #X connect 3 0 1 0;
@@ -346,11 +353,14 @@ created before), f 36;
 #X connect 11 0 10 0;
 #X connect 13 0 10 0;
 #X connect 14 0 15 0;
-#X connect 15 0 16 0;
-#X connect 16 0 11 0;
-#X connect 16 1 13 0;
+#X connect 15 0 13 0;
+#X connect 15 1 11 0;
+#X connect 16 0 15 1;
 #X connect 17 0 15 1;
-#X connect 18 0 15 1;
+#X connect 20 0 15 1;
+#X connect 21 0 15 1;
+#X connect 22 0 19 0;
+#X connect 23 0 19 1;
 #X restore 28 431 pd MELODIC_example;
 #X connect 0 0 2 0;
 #X connect 0 0 28 0;
