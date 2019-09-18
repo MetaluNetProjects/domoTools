@@ -1,4 +1,5 @@
 #!/bin/bash
+sudo ~/bin/sdtool/static/arm-sdtool /dev/mmcblk0 unlock
 sudo mount -o remount,rw /
 sudo mount -o remount,rw /boot
 

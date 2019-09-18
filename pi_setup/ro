@@ -1,4 +1,5 @@
 #!/bin/bash
 sudo mount -o remount,ro /
 sudo mount -o remount,ro /boot
+sudo ~/bin/sdtool/static/arm-sdtool /dev/mmcblk0 lock
 
