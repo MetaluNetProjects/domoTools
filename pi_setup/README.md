@@ -82,6 +82,7 @@ copy to ~/bin the files:
 - ro
 - rw
 - ENTRY_PATCH.txt
+- sdtool/ directory
 
 Allow execution of the bash scripts:  
 ```
