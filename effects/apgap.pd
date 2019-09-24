@@ -3,15 +3,15 @@
 #X obj 1 17 cnv 15 90 60 empty empty empty 2 5 1 8 -260097 -257472
 0;
 #X obj 32 29 mknob 15 100 0 1 0 0 \$0-time-snd \$0-time-rcv time -2
--5 1 8 -262131 -1 -1 0 1;
+-5 1 8 -262131 -1 -1 5800 1;
 #X obj 6 59 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv volume -2
--5 1 8 -258699 -1 -1 0 1;
+-5 1 8 -258699 -1 -1 9400 1;
 #X obj 6 28 mknob 15 100 0 1 0 0 \$0-line-snd \$0-line-rcv line -2
 -5 1 8 -241291 -1 -1 0 1;
 #X obj 63 29 mknob 15 100 0 1 0 0 \$0-vitesse-snd \$0-vitesse-rcv vitesse
--2 -5 1 8 -260818 -1 -1 0 1;
+-2 -5 1 8 -260818 -1 -1 2900 1;
 #X obj 62 61 tgl 15 0 \$0-bypass-snd \$0-bypass-rcv bypass 0 -6 1 8
--258699 -1 -1 0 1;
+-258699 -1 -1 0.661417 1;
 #X obj 11 157 outlet~;
 #X obj 11 111 inlet~;
 #X obj 73 110 r \$0-bypass-snd;
@@ -141,8 +141,8 @@
 #X obj 190 71 apf \$1-\$2 time \$0-time;
 #X obj 190 92 apf \$1-\$2 vol \$0-vol;
 #X obj 190 113 apf \$1-\$2 vitesse \$0-vitesse;
-#X obj 190 134 apf \$1-\$2 bypass \$0-bypass;
 #X obj 190 155 apsubmaster \$1-\$2 \$1 \$2;
+#X obj 190 134 api \$1-\$2 bypass \$0-bypass;
 #X connect 7 0 9 0;
 #X connect 8 0 9 1;
 #X connect 9 0 6 0;

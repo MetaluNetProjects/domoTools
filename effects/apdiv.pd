@@ -1,21 +1,21 @@
-#N canvas 508 539 417 220 10;
+#N canvas 117 435 417 220 10;
 #X declare -path utils;
 #X obj 1 17 cnv 15 95 60 empty empty empty 2 6 1 8 -62784 -257472 0
 ;
 #X obj 41 43 mknob 15 100 0 1 0 0 \$0-eff-snd \$0-eff-rcv effect -2
--5 1 8 -262131 -1 -1 6000 1;
+-5 1 8 -262131 -1 -1 0 1;
 #X obj 6 59 mknob 15 100 0 1 0 0 \$0-vol-snd \$0-vol-rcv volume -2
--5 1 8 -258699 -1 -1 5800 1;
+-5 1 8 -258699 -1 -1 0 1;
 #X obj 6 29 mknob 15 100 0 1 0 0 \$0-effmicro-snd \$0-effmicro-rcv
-effect-micro -2 -5 1 8 -241291 -1 -1 6000 1;
+effect-micro -2 -5 1 8 -241291 -1 -1 0 1;
 #X obj 69 30 mknob 15 100 0 1 0 0 \$0-vol2-snd \$0-vol2-rcv vol2 -2
--5 1 8 -260818 -1 -1 5500 1;
+-5 1 8 -260818 -1 -1 7300 1;
 #X obj 67 60 tgl 15 0 \$0-bypass-snd \$0-bypass-rcv bypass 0 -6 1 8
--258699 -1 -1 0 1;
+-258699 -1 -1 1 1;
 #X obj 10 141 outlet~;
 #X obj 10 95 inlet~;
 #X obj 72 95 r \$0-bypass-snd;
-#N canvas 1 297 146 204 allsound 0;
+#N canvas 1 324 146 204 allsound 1;
 #X obj 22 21 inlet~;
 #X obj 18 168 outlet~;
 #X obj 79 25 inlet;
@@ -25,7 +25,7 @@ effect-micro -2 -5 1 8 -241291 -1 -1 6000 1;
 #X obj 166 458 outlet~;
 #X obj 389 12 inlet;
 #X obj 389 33 switch~;
-#X obj 371 70 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 1 1
+#X obj 371 70 tgl 15 0 empty empty empty 0 -6 0 8 -262144 -1 -1 0 1
 ;
 #X obj 75 289 mull~ 0 10;
 #X obj 53 78 fiddle~ 2048;
@@ -116,9 +116,11 @@ effect-micro -2 -5 1 8 -241291 -1 -1 6000 1;
 #X obj 192 33 apf \$1-\$2 eff \$0-eff;
 #X obj 191 61 apf \$1-\$2 vol \$0-vol;
 #X obj 193 88 apf \$1-\$2 vol2 \$0-vol2;
-#X obj 194 109 apf \$1-\$2 bypass \$0-bypass;
 #X obj 193 130 apsubmaster \$1-\$2 \$1 \$2;
+#X floatatom 109 145 5 0 0 0 - - -;
+#X obj 194 109 api \$1-\$2 bypass \$0-bypass;
 #X connect 7 0 9 0;
 #X connect 8 0 9 1;
+#X connect 8 0 16 0;
 #X connect 9 0 6 0;
 #X coords 0 -1 1 1 97 80 1 0 0;
